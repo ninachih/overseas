@@ -4,6 +4,8 @@ import home from '@/views/home.vue'
 import OTP from '@/views/otp.vue'
 import count1 from '@/views/count1.vue'
 import count2 from '@/views/count2.vue'
+import detail from '@/views/detail.vue'
+import adjustment from '@/views/adjustment.vue'
 
 Vue.use(VueRouter);
 
@@ -31,8 +33,17 @@ const routes = [
   {
     path: '/count2',
     name: 'count2',
-    component: count2,
-    meta: { requiresAuth: true }
+    component: count2
+  },
+  {
+    path: '/detail',
+    name: 'detail',
+    component: detail
+  },
+  {
+    path: '/adjustment',
+    name: 'adjustment',
+    component: adjustment
   },
   // {
   //   path: '/count2',
@@ -68,7 +79,7 @@ const router = new VueRouter({
       return {
         selector: to.hash,
         behavior: 'smooth',
-        offset: { x: 0, y: 200 },
+        offset: { x: 0, y: 280 },
       };
     } else {
       return { x: 0, y: 0 }

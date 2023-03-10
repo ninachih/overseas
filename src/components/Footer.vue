@@ -2,14 +2,14 @@
   <footer>
       <div class="footerList">
         <ul class="container">
-            <li><a href="" target="_blank">聯繫客服</a></li>
-            <li><a href="" target="_blank">理賠服務</a></li>
+            <li><a href="https://www.tmnewa.com.tw/B2C_V2/commonweb/OfficialInfo/ContactUs.aspx" target="_blank">聯繫客服</a></li>
+            <li><a href="https://www.tmnewa.com.tw/customerservice/claimsettlement" target="_blank">理賠服務</a></li>
             <li><a href="https://www.tmnewa.com.tw/customerservice/documentdownload/productterms" target="_blank">商品條款</a></li>
-            <li><a href="" target="_blank">聲明事項</a></li>
+            <li><a href="https://www.tmnewa.com.tw/customerprotectionstatement" target="_blank">聲明事項</a></li>
             <li><a href="https://www.fsc.gov.tw/ch/index.jsp" target="_blank">金融監督管理委員會</a></li>
-            <li><a href="https://www.tmnewa.com.tw/customize/CustomerProtection" target="_blank">消費者保護</a></li>
-            <li><a href="http://www.nlia.org.tw/modules/tadnews/page.php?ncsn=114&nsn=429#A" target="_blank">保險業經營電子商務自律規範</a></li>
-            <li><a href="" target="_blank">直接投保優惠</a></li>
+            <li><a href="https://cpc.ey.gov.tw/" target="_blank">消費者保護</a></li>
+            <li><a href="https://law.lia-roc.org.tw/Law/Content?lsid=FL034012" target="_blank">保險業經營電子商務自律規範</a></li>
+            <li><a href="https://b2c.tmnewa.com.tw/blog/strength.html" target="_blank">直接投保優惠</a></li>
         </ul>
       </div>
       <div class="copyright">

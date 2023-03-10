@@ -1,47 +1,21 @@
 <template>
-    <div class="assure">
+    <div id="assure">
         <div class="container">
             <h2 class="title2">保障內容</h2>
-            <ul class="tabBlock-tabs">
-                <li
-                  v-for="(tab, index) in tabs"
-                  :key="index"
-                  :aria-posinet="index + 1"
-                  class="tabBlock-tab"
-                  :class="active_tab === index ? 'is-active' : ''"
-                  :aria-selected="active_tab === index"
-                >
-                  <a
-                    href="javascript:void(0);"
-                    @click="changeTab(index)"
-                  >
-                    <div v-html="tab.tab_title"></div>
-                  </a>
-                </li>
-            </ul>   
-            <div class="tabBlock-content">
-              <div
-                v-for="(tab, index) in tabs"
-                :key="index"
-                :aria-current="active_tab === index"
-                class="tabBlock-pane"
-                v-show="active_tab === index"
-              >
-                <div>
+                <b-tabs card>
+                  <b-tab :title="tab.tab_title" v-for="(tab, index) in tabs" :key="index">
                     <p class="gray">保險項目</p>
                     <h3 v-html="tab.tab_title"></h3>
                     <div class="line"></div>
-                    <div v-html="tab.tab_content"></div>   
-                </div>
-              </div>
-              <hr />
-              <div class="button-pane">
-                <p>
-                    詳細承保內容請以「保單及條款」上所記載為準
-                </p>
-                <a href="https://www.tmnewa.com.tw/b2c_v2/insuresinfo/travel-product.html" class="btn" target="_blank">瞭解更多</a>
-              </div>
-            </div>
+                    <div v-html="tab.tab_content"></div>
+                    <div class="button-pane">
+                        <p>
+                            詳細承保內容請以「保單及條款」上所記載為準
+                        </p>
+                      <a href="https://www.tmnewa.com.tw/b2c_v2/insuresinfo/travel-product.html" class="btn" target="_blank">瞭解更多</a>
+                    </div>
+                  </b-tab>
+                </b-tabs>
         </div>
     </div>
 </template>
@@ -50,34 +24,33 @@ export default {
   name: "assure",
   data(){
     return{
-        active_tab:0,
         tabs:[
             {
-            tab_title: "旅行</br>平安保險",
+            tab_title: "旅行平安保險",
             tab_content:"<ul><li><p class='gray'>保障項目</p><p class='gray'>保障內容</p></li><li><p>意外死亡及失能</p><p>100萬~1,500萬</p></li><li><p>傷害醫療</p><p>6萬~150萬</p></li><li><p>意外喪葬費用及失能(限15歲以下)</p><p>最高61.5萬</p></li><li><p>個人賠償責任保險(每一事故自負額2,500元)</p><p>體傷20萬/財損10萬/保期內最高60萬</p></li></ul>"
             },
             {
-            tab_title: "國內</br>旅遊不便險",
+            tab_title: "國內旅遊不便險",
             tab_content:
                 "<ul><li><p class='gray'>保障項目</p><p class='gray'>保障內容</p></li><li><p>境內旅程延誤保險金(定額)</p><p>2,000元</p></li><li><p>境內旅程取消或縮短保險(限額)</p><p>1萬元</p></li><li><p>境內劫持補償費用保險(定額)</p><p>1萬元</p></li><li><p>旅行期間行動電話失竊補償保險(定額)</p><p>5,000元</p></li><li><p>食物中毒費用保險(定額)</p><p>3,000元</p></li><li><p>旅行期間居所動產損失保險(限額)(每一事故自負額5,000元)</p><p>10萬</p></li><li><p>旅行期間居家竊盜保險(限額)</p><p>5萬元</p></li><li><p>旅行期間居家火災臨時住宿補償保險(定額)</p><p>1萬元</p></li><li><p>旅行期間居所第三人責任保險(限額)</p><p>30萬元</p></li></ul>"
             },
             {
-            tab_title: "交通</br>事故保險",
+            tab_title: "交通事故保險",
             tab_content:
                 "<ul><li><p class='gray'>保障項目</p><p class='gray'>保障內容</p></li><li><p>大眾運輸事故死亡及失能(限15歲以上投保)</p><p>100萬元</p></li><li><p>國道交通事故死亡及失能(限15歲以上投保)</p><p>100萬元</p></li></ul>"
             },
             {
-            tab_title: "重大</br>燒燙傷保險",
+            tab_title: "重大燒燙傷保險",
             tab_content:
             "<ul><li><p class='gray'>保障項目</p><p class='gray'>保障內容</p></li><li><p>重大燒燙傷(限額)</p><p>100萬元</p></li></ul>"
             },
             {
-            tab_title: "租車</br>旅遊保險",
+            tab_title: "租車旅遊保險",
             tab_content:
             "<ul><li><p class='gray'>保障項目</p><p class='gray'>保障內容</p></li><li><p>車對車碰撞車體損失責任保險(限額)</p><p>5萬元</p></li><li><p>第三人責任保險-每一人體傷/每一意外事故(限額)</p><p>10萬元/20萬元</p></li><li><p>第三人責任保險-第三人財損(限額)</p><p>3萬元</p></li></ul>"
             },
             {
-            tab_title: "三鐵</br>活動保險",
+            tab_title: "三鐵活動保險",
             tab_content:
             "<ul><li><p class='gray'>保障項目</p><p class='gray'>保障內容</p></li><li><p>特定事故傷害醫療保險(熱痙攣/中暑等特定事故醫療)</p><p>10萬~150萬</p></li><li><p>境內急難救助保險(搜索救助/醫療運送/親人前往處理)(限額)</p><p>30萬/5萬/5萬元</p></li></ul>"
             }
@@ -88,9 +61,7 @@ export default {
     
   },
   methods:{
-    changeTab(tabIndexValue) {
-      this.active_tab = tabIndexValue;
-    }
+
   }
   
 };
@@ -98,78 +69,62 @@ export default {
 
 <style lang="scss">
 $border: #EBECED;
-.assure{
+#assure{
     margin:50px 0;
-}
-.tabBlock {
-  margin: 0 0 2.5rem;
-
-  &-tabs {
+    .card-header{
+  margin: 0 0 20px;
+  ul{
     list-style: none;
     margin: 0 0 10px;
     padding: 0;
     text-align:center;
     width:100%;
     display: flex;
-    &::after {
-      clear: both;
-      content: "";
-      display: table;
-    }
-  }
-  
-  &-tab {
-    background-color: #fff;
-    border: 2px solid $border;
-    border-radius: 22px;
-    color: $mainBlue;
-    cursor: pointer;
-    align-items: center;
-    font-weight: 600;
-    float: left;
-    padding: 10px 15px;
-    box-sizing: border-box;
-    position: relative;
-    transition: 0.1s ease-in-out;
-    text-decoration: none;
-    font-size:24px;
-    width: 16%;
-    margin:0 5px;
-    a{
-        color:$mainBlue;
-    }
-    &:last-of-type {
-      border-right-style: solid;
-    }
-    
-    &:hover,
-    &:focus {
-      background: $mainBlue;
-      border: 2px solid $mainBlue;
+    li{
+      cursor: pointer;
+      align-items: center;
+      font-weight: 600;
+      float: left;
+      position: relative;
+      transition: 0.1s ease-in-out;
+      text-decoration: none;
+      font-size:24px;
+      width: 16%;
+      margin:0 5px;
       a{
-        color:#fff;
+        color: $mainBlue;
+        display: block;
+        padding: 5px 15px;
+        box-sizing: border-box;
+        border: 2px solid $border;
+        border-radius: 22px;
+        font-size:30px;
+        background-color: #fff;
+        &:hover,
+        &:focus {
+          background: $mainBlue;
+          border: 2px solid $mainBlue;
+          color:#fff;
+        }
+      }
+   
+    
+      .active {
+        position: relative;
+        background: $mainBlue;
+        z-index: 1;
+        border: 2px solid $mainBlue;
+        color:$mainColor
       }
     }
-
-    &.is-active {
-      position: relative;
-      background: $mainBlue;
-      z-index: 1;
-      border: 2px solid $mainBlue;
-      a{color:#fff}
-    }
     
-    svg {
-      height: 1.2rem;
-      width: 1.2rem;
-      margin-right: 0.5rem;
-      pointer-events: none;
-      fill: currentcolor;
-    }
+    
   }
-  &-content {
+}
+.tab-content{
     background-color: #fff;
-    padding: 1.25rem;
+    padding: 30px 20px;
+    box-sizing: border-box;
     clear: both;
     border-radius:32px;
     border: 2px solid #EBECED;
@@ -180,8 +135,7 @@ $border: #EBECED;
         color:$mainBlue;
         br{display:none;}
     }
-    ul{
-        li{
+    li{
             display: -webkit-box;
             display: -ms-flexbox;
             display: flex;
@@ -189,29 +143,6 @@ $border: #EBECED;
             -ms-flex-pack: justify;
             justify-content: space-between;
             line-height:40px;
-        }
-    }
-    .line{
-        border-bottom:2px solid $gray;
-        margin:20px 0;
-        &::before{
-            content:"";
-            width:10px;
-            height:10px;
-            border-radius:10px;
-            float:left;
-            background:$gray;
-            margin-top:-4px;
-        }
-        &::after{
-            content:"";
-            width:10px;
-            height:10px;
-            border-radius:10px;
-            float:right;
-            background:$gray;
-            margin-top:-4px;
-        }
     }
     a {
       font-weight: 700;
@@ -233,14 +164,15 @@ $border: #EBECED;
     }
     .button-pane{
         text-align:center;
+        margin-top:40px;
         p{
             color:$gray;
         }
         a.btn{
-            margin:20PX auto;
+            margin:30px auto;
         }
     }
   }
-  
 }
+
 </style>

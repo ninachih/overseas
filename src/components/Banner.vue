@@ -7,11 +7,11 @@
         ><img src="../assets/tmnewa.png" alt="" />
       </a>
       <div class="link">
-        <div class="linkCon">
+        <!-- <div class="linkCon">
         <router-link :to="{ path: '/', hash: '#q1' }">保單服務</router-link>
         <router-link :to="{ path: '/', hash: '#login' }">投保查詢</router-link>
         <router-link :to="{ path: '/', hash: '#notice' }">商品說明</router-link>
-        </div>
+        </div> -->
         <div class="iconM" @click="showList">
           <div class="bar-top"></div>
           <div class="bar-middle"></div>
@@ -86,7 +86,7 @@ export default {
     box-sizing: border-box;
     background-size: 102%;
     top: 0;
-
+    z-index: 1000;
     .logo {
         float: left;
 

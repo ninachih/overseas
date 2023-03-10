@@ -3,8 +3,10 @@
     <goTop />
     <KV/><!-- 主視覺 -->
     <Banner/>
+    <div class="gradient"><!-- 跨區域漸層背景 -->
     <Intro/>
     <Assure/>
+    </div>
     <travelTheme/>
     <school/>
     <QA/>
